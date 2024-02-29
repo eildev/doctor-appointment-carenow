@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="revolution/css/layers.css">
     <link rel="stylesheet" href="revolution/css/settings.css">
     <link rel="stylesheet" href="{{asset('frontend')}}/assets/css/responsive.css">
+    <script type="text/javascript" src="{{asset('frontend')}}/javascript/jquery.min.js"></script>
     <!--owl.carousel-->
     <link rel="stylesheet" href="{{asset('frontend')}}/owlcarousel/assets/owl.theme.default.min.css">
     <!--animation-->
@@ -49,7 +50,7 @@
         </div><!--#page-->
     </div> <!--#wrapper-->
     <!-- Javascript -->
-    <script type="text/javascript" src="{{asset('frontend')}}/javascript/jquery.min.js"></script>
+    
     <script type="text/javascript" src="{{asset('frontend')}}/javascript/bootstrap.min.js"></script>
     <script type="text/javascript" src="{{asset('frontend')}}/javascript/jquery.easing.js"></script>
     <script type="text/javascript" src="{{asset('frontend')}}/javascript/jquery-countTo.js"></script>
@@ -78,6 +79,8 @@
     <script src="{{asset('frontend')}}/owlcarousel/owl.carousel.min.js"></script>
     <script src="{{asset('frontend')}}/owlcarousel/carousel.js"></script>
     <script type="text/javascript" src="{{asset('frontend')}}/javascript/main.js"></script>
+    
+
 </body>
 
 </html>

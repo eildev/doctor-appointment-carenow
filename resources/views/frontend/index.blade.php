@@ -17,6 +17,7 @@
                                     <div class="features-intro-top wow fadeInDown">
                                         <img src="{{asset('frontend')}}/assets/image/common/MaskGroup9.png" alt="image">
                                         <div class="features-inner">
+                                            
                                             <img src="{{asset('frontend')}}/assets/image/pattern/Path18193.png" alt="image">
                                         </div>
                                     </div>

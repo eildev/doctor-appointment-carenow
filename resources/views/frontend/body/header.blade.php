@@ -11,11 +11,8 @@
                             <nav id="mainnav" class="mainnav">
                                 <ul class="menu">
                                     <li class="active menu-item-has-children">
-                                        <a href="index.html" title="">Home</a>
-                                        <ul class="sub-menu">
-                                            <li class="active"><a href="index.html" title="">Home 01</a></li>
-                                            <li><a href="home2.html" title="">Home 02</a></li>
-                                        </ul>
+                                        <a href="{{route('index')}}" title="">Home</a>
+                                    
                                         <!-- /.sub-menu -->
                                     </li>
                                     <li class="menu-item-has-children">
@@ -39,18 +36,14 @@
                                         <!-- /.sub-menu -->
                                     </li>
                                     <li class="menu-item-has-children">
-                                        <a href="blog-standard.html" title="">Blog</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog-standard.html" title="">Blog Standard</a></li>
-                                            <li><a href="blog-details.html" title="">Blog Details</a></li>
-                                        </ul>
+                                        <a href="{{route('home.blog')}}" title="">Blog</a>
                                         <!-- /.sub-menu -->
                                     </li>
                                     <li>
-                                        <a href="book-appointment.html" title="">Book Appointment</a>
+                                        <a href="{{route('home.appointment')}}" title="">Book Appointment</a>
                                     </li>
                                     <li>
-                                        <a href="contact.html" title="">Contact</a>
+                                        <a href="{{route('home.contact')}}" title="">Contact</a>
                                     </li>
                                 </ul>
                                 <!-- /.menu -->
@@ -67,7 +60,7 @@
                                     </div>
                                 </div>
                                 <div class="button-header">
-                                    <a href="book-appointment.html" class="themesflat-button bg-accent btn-header"><span>Get Appointment</span></a>
+                                    <a href="{{route('home.appointment')}}" class="themesflat-button bg-accent btn-header"><span>Get Appointment</span></a>
                                 </div>
                             </div>
                         </div>
