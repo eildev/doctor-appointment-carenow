@@ -1,86 +1,64 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title> Mecare – Hospital and Health HTML Template </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/x-icon" href="{{asset('frontend')}}/img/favicon.ico">
+        <!-- Place favicon.ico in the root Internist, General Practitonery -->
 
-<!DOCTYPE html>
-<html lang="en">
+		<!-- CSS here -->
+        <link rel="stylesheet" href="{{asset('frontend')}}/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{asset('frontend')}}/css/animate.min.css">
+        <link rel="stylesheet" href="{{asset('frontend')}}/css/magnific-popup.css">
+        <link rel="stylesheet" href="{{asset('frontend')}}/fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="{{asset('frontend')}}/css/dripicons.css">
+        <link rel="stylesheet" href="{{asset('frontend')}}/css/slick.css">
+        <link rel="stylesheet" href="{{asset('frontend')}}/css/default.css">
+        <link rel="stylesheet" href="{{asset('frontend')}}/css/meanmenu.css">
+        <link rel="stylesheet" href="{{asset('frontend')}}/css/style.css">
+        <link rel="stylesheet" href="{{asset('frontend')}}/css/responsive.css">
+        
+        <script src="{{asset('frontend')}}/js/vendor/jquery-1.12.4.min.js"></script>
+    </head>
+    <body>
+        <!-- header -->
+       @include('frontend.body.header')
+        <!-- header-end -->
+        <!-- main-area -->
+        <main>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carenow – Medical & Dentist HTML Tempate</title>
-    <link rel="stylesheet" href="{{asset('frontend')}}/assets/css/color/color-1.css">
-    <link rel="stylesheet" href="{{asset('frontend')}}/assets/css/style.css">
-    <link rel="stylesheet" href="revolution/css/layers.css">
-    <link rel="stylesheet" href="revolution/css/settings.css">
-    <link rel="stylesheet" href="{{asset('frontend')}}/assets/css/responsive.css">
-    <script type="text/javascript" src="{{asset('frontend')}}/javascript/jquery.min.js"></script>
-    <!--owl.carousel-->
-    <link rel="stylesheet" href="{{asset('frontend')}}/owlcarousel/assets/owl.theme.default.min.css">
-    <!--animation-->
-    <link rel="stylesheet" href="{{asset('frontend')}}/assets/animation/animate.css">
-    <!--logo-->
-    <link rel="icon" href="{{asset('frontend')}}/assets/image/Facvicon.png" sizes="32x32" />
-</head>
-<body class="counter-scroll header_sticky">
-    <!-- Preloader -->
-    <div id="loading-overlay">
-        <div class="loader"></div>
-    </div>
-    <div class="wrapper">
-        <div id="page">
-            <!-- //header -->
-                @include('frontend.body.header')
-            <!-- Main Content -->
-            <div id="main-content" class="site-main clearfix">
-                <div id="content-wrap">
-                   @yield('body')
-                    <!--site-content-->
-                </div>
-                <!--#content-wrap-->
-            </div>
-            <!--#main-content-->
+           @yield('body')
+           
+        </main>
+        <!-- main-area-end -->
+        <!-- footer -->
+       
+        <!-- footer-end -->
+        @include('frontend.body.footer')
 
-            <!-- //Footer -->
-            @include('frontend.body.footer')
-            <div class="button-go-top">
-                <a href="#" title="" class="go-top">
-                    <i class="fa fa-chevron-up"></i>
-                </a>
-            </div>
-
-        </div><!--#page-->
-    </div> <!--#wrapper-->
-    <!-- Javascript -->
-    
-    <script type="text/javascript" src="{{asset('frontend')}}/javascript/bootstrap.min.js"></script>
-    <script type="text/javascript" src="{{asset('frontend')}}/javascript/jquery.easing.js"></script>
-    <script type="text/javascript" src="{{asset('frontend')}}/javascript/jquery-countTo.js"></script>
-    <script type="text/javascript" src="{{asset('frontend')}}/javascript/jquery-validate.js"></script>
-    
-    <!-- Revolution Slider -->
-    <script type="text/javascript" src="{{asset('frontend')}}/javascript/rev-slider.js"></script>
-    <!-- Load Extensions only on Local File Systems ! The following part can be removed on Server for On Demand Loading -->  
-    <script type="text/javascript" src="{{asset('frontend')}}/revolution/js/jquery.themepunch.revolution.min.js"></script>
-    <script type="text/javascript" src="{{asset('frontend')}}/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <!-- <script type="text/javascript" src="{{asset('frontend')}}/revolution/js/slider_v1.js"></script>
-    <script type="text/javascript" src="{{asset('frontend')}}/revolution/js/slider_v2.js"></script> -->
-    <script type="text/javascript" src="{{asset('frontend')}}/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-    <script type="text/javascript" src="{{asset('frontend')}}/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script type="text/javascript" src="{{asset('frontend')}}/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script type="text/javascript" src="{{asset('frontend')}}/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script type="text/javascript" src="{{asset('frontend')}}/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-    <script type="text/javascript" src="{{asset('frontend')}}/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript" src="{{asset('frontend')}}/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script type="text/javascript" src="{{asset('frontend')}}/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script type="text/javascript" src="{{asset('frontend')}}/revolution/js/extensions/revolution.extension.video.min.js"></script>
-    <!--animation-->
-    <script src="{{asset('frontend')}}/assets/animation/wow.min.js"></script>
-    <script src="{{asset('frontend')}}/javascript/animation.js"></script>
-    <!--owl.carousel-->
-    <script src="{{asset('frontend')}}/owlcarousel/owl.carousel.min.js"></script>
-    <script src="{{asset('frontend')}}/owlcarousel/carousel.js"></script>
-    <script type="text/javascript" src="{{asset('frontend')}}/javascript/main.js"></script>
-    
-
-</body>
-
+		<!-- JS here -->
+        	<!-- JS here -->
+        <script src="{{asset('frontend')}}/js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="{{asset('frontend')}}/js/popper.min.js"></script>
+        <script src="{{asset('frontend')}}/js/bootstrap.min.js"></script>
+        <script src="{{asset('frontend')}}/js/one-page-nav-min.js"></script>
+        <script src="{{asset('frontend')}}/js/jquery.meanmenu.min.js"></script>
+        <script src="{{asset('frontend')}}/js/slick.min.js"></script>
+        <script src="{{asset('frontend')}}/js/ajax-form.js"></script>
+        <script src="{{asset('frontend')}}/js/paroller.js"></script>
+        <script src="{{asset('frontend')}}/js/wow.min.js"></script>
+        <script src="{{asset('frontend')}}/js/js_isotope.pkgd.min.js"></script>
+        <script src="{{asset('frontend')}}/js/imagesloaded.min.js"></script>
+        <script src="{{asset('frontend')}}/js/parallax.min.js"></script>
+        <script src="{{asset('frontend')}}/js/jquery.waypoints.min.js"></script>
+        <script src="{{asset('frontend')}}/js/jquery.counterup.min.js"></script>
+        <script src="{{asset('frontend')}}/js/jquery.scrollUp.min.js"></script>
+        <script src="{{asset('frontend')}}/js/parallax-scroll.js"></script>
+        <script src="{{asset('frontend')}}/js/jquery.magnific-popup.min.js"></script>
+        <script src="{{asset('frontend')}}/js/element-in-view.js"></script>
+        <script src="{{asset('frontend')}}/js/main.js"></script>
+    </body>
 </html>

@@ -1,73 +1,102 @@
-<header class="header downscrolled clearfix">
-                <div id="header">
-                    <div id="site-header">                   
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="{{asset('frontend')}}/assets/image/LogoDark.png" alt="image">
-                            </a>
-                        </div>
-                        <!-- //mobile menu button -->
-                        <div class="nav-wrap">
-                            <nav id="mainnav" class="mainnav">
-                                <ul class="menu">
-                                    <li class="active menu-item-has-children">
-                                        <a href="{{route('index')}}" title="">Home</a>
-                                    
-                                        <!-- /.sub-menu -->
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="about-us.html" title="">About Us</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="about-us.html" title="">About</a></li>
-                                            <li><a href="doctor.html" title="">Doctor</a></li>
-                                            <li><a href="doctor-details.html" title="">Doctor Details</a></li>
-                                            <li><a href="pricing-table.html" title="">Our Pricing</a></li>
-                                            <li><a href="gallery.html" title="">Gallery</a></li>
-                                            <li><a href="faq.html" title="">FAQ</a></li>
-                                        </ul>
-                                         <!-- /.sub-menu -->
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="services.html" title="">Services</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="services.html" title="">Services</a></li>
-                                            <li><a href="service-details.html" title="">Services Details</a></li>
-                                        </ul>
-                                        <!-- /.sub-menu -->
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="{{route('home.blog')}}" title="">Blog</a>
-                                        <!-- /.sub-menu -->
-                                    </li>
+<header class="header-area">  
+			<div class="header-top second-header d-none d-md-block">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-md-3 d-none d-lg-block">
+                        </div>                       
+                        <div class="col-lg-4 col-md-8 d-none  d-md-block">
+                            <div class="header-cta">
+                                <ul>                                   
                                     <li>
-                                        <a href="{{route('home.appointment')}}" title="">Book Appointment</a>
+                                        <i class="icon dripicons-mail"></i>
+                                        <span>info@example.com</span>
                                     </li>
-                                    <li>
-                                        <a href="{{route('home.contact')}}" title="">Contact</a>
+                                     <li>
+                                        <i class="icon dripicons-phone"></i>
+                                        <span>+8 12 3456897</span>
                                     </li>
                                 </ul>
-                                <!-- /.menu -->
-                            </nav>
-                        </div>
-                        <!-- /#mainnav -->
-                        <div class="contact">
-                            <div class="top-bar-right">
-                                <div class="call-us">
-                                    <div class="icon-call-us"></div>
-                                    <div class="content-call-us">
-                                        <p>Call Us</p>
-                                        <a href="tel:360-779-2228" class="font-bold text-color-title-sidebar">360-779-2228</a>
-                                    </div>
-                                </div>
-                                <div class="button-header">
-                                    <a href="{{route('home.appointment')}}" class="themesflat-button bg-accent btn-header"><span>Get Appointment</span></a>
-                                </div>
                             </div>
                         </div>
-
-                        <div class="btn-menu">
-                            <span></span>
+                         <div class="col-lg-5 col-md-3 d-none d-lg-block">
+                             <div class="header-social text-right">
+                            <span>
+                                <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>                               
+                               </span>                    
+                               <!--  /social media icon redux -->                               
+                        </div>
+                        </div>
+                         
+                    </div>
+                </div>
+            </div>		
+            <div id="header-sticky" class="menu-area">
+                <div class="container">
+                    <div class="second-menu">
+                        <div class="row align-items-center">
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo">
+                                    <a href="index.html"><img src="{{asset('frontend')}}/img/logo/logo.png" alt="logo"></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-8 col-lg-8">                               
+                                <div class="main-menu text-right pr-15">
+                                    <nav id="mobile-menu">
+                                        <ul>
+                                            <li class="has-sub">
+												<a href="index.html">Home</a>
+												<ul>													
+													<li><a href="index.html">Home Page 01</a></li>
+													<li><a href="index-2.html">Home Page 02</a></li>													
+													<li><a href="index-3.html">Home Page 03</a></li>													
+												</ul>
+											</li>
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li class="has-sub">
+                                                <a href="services.html">Services</a>
+                                                <ul>													
+													<li><a href="services.html">Services</a></li>
+													<li><a href="services-detail.html">Services Details</a></li>
+												</ul>
+                                            </li>                                                                                     
+											<li class="has-sub"><a href="#">Other Page</a>
+												<ul>													
+													<li><a href="pricing.html">Pricing</a></li>
+													<li><a href="team.html">Team</a></li>
+                                                    <li><a href="shop.html">Shop</a></li>
+													<li><a href="shop-details.html">Shop Details</a></li>
+												</ul>
+											</li>
+                                            <li class="has-sub"> 
+                                                <a href="departments.html">Departments</a>
+                                                <ul>													
+													<li><a href="departments.html">Departments</a></li>
+													<li><a href="departments-detail.html">Departments Details</a></li>
+												</ul>
+                                            </li>
+                                           
+											<li class="has-sub"> 
+                                                <a href="blog.html">Blog</a>
+                                                <ul>													
+													<li><a href="blog.html">Blog</a></li>
+													<li><a href="blog-details.html">Blog Details</a></li>
+												</ul>
+                                            </li>               
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>    
+                             <div class="col-xl-2 col-lg-2 d-none d-lg-block">
+                                 <a href="contact.html" class="top-btn">Get A Quote <i class="fas fa-chevron-right"></i></a>
+                                 
+                            </div>
+                             <div class="col-12">
+                            <div class="mobile-menu"></div>
+                        </div>
                         </div>
                     </div>
                 </div>
-            </header>
+            </div>
+        </header>
