@@ -30,11 +30,11 @@
         success:function(res){
          //   console.log(res.sliderInfo.slider_image);
             $src = "https://dr.sobrokom.store/uploads/slider_image/"
-            var $href = res.sliderInfo.slider_links; 
+            var href = res.sliderInfo.slider_links; 
             $('.slider_image').attr('src',$src+res.sliderInfo.slider_image);      
             $('.short_caption').text(res.sliderInfo.short_caption);          
             $('.long_caption').text(res.sliderInfo.long_caption);          
-            $('.slider_links').text('href',res.sliderInfo.slider_links);          
+            $('.slider_links').attr('href',href);          
         }
        });
     })
