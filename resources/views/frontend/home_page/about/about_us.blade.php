@@ -1,9 +1,13 @@
+<style>
+
+</style>
 <section id="about" class="about-area about-p pt-65 pb-80 p-relative" style="background-image:url({{asset('frontend')}}/img/an-bg/an-bg03.png); background-size: contain; background-repeat: no-repeat;background-position: center center;">
                <div class="container">
                    <div class="row align-items-center">					
                      <div class="col-lg-6 col-md-12 col-sm-12">
-                           <div class="s-about-img p-relative">
-                               <img src="{{asset('frontend')}}/img/bg/illlustration.png" alt="img">
+                           <div class="s-about-img  p-relative">
+                               <!-- <img src="{{asset('frontend')}}/img/bg/illlustration.png" alt="img"> -->
+                               <img src="" alt="img" class="about_us_image">
                                
                            </div>
                        </div>
@@ -11,9 +15,9 @@
                            <div class="about-content s-about-content pl-30">
                                <div class="section-title mb-20">
                                    <span>About Us</span>
-                                   <h2>We Are Specialize in Medical Diagnositics</h2>                                  
+                                   <h2 class="title"></h2>                                  
                                </div>
-                               <p>Nulla lacinia sapien a diam ullamcorper, sed congue leo vulputate. Phasellus et ante ultrices, sagittis purus vitae, sagittis quam. Quisque urna lectus, auctor quis tristique tincidunt, semper vel lectus. Mauris eget eleifend massa. Praesent ex felis, laoreet nec tellus in, laoreet commodo ipsum.</p>
+                               <p class="description"></p>
                                
                                <ul>
                                        <li>
@@ -43,3 +47,21 @@
                    </div>
                </div>
            </section>
+
+
+           
+           <script>
+    $(document).ready(function(){
+      $.ajax({
+        url:"https://dr.sobrokom.store/api/doctor/about/1",
+        type:'GET',
+        success:function(res){
+          //console.log(res);
+          $src ="https://dr.sobrokom.store/uploads/about_us/"
+          $('.about_us_image').attr('src',$src+res.aboutUs.image);
+          $('.title').text(res.aboutUs.title); 
+          $('.description').html(res.aboutUs.description); 
+        }
+      });
+    });
+</script>

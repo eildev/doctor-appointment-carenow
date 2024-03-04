@@ -53,13 +53,9 @@
 													<li><a href="index-3.html">Home Page 03</a></li>													
 												</ul>
 											</li>
-                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="{{route('about.page')}}">About Us</a></li>
                                             <li class="has-sub">
-                                                <a href="services.html">Services</a>
-                                                <ul>													
-													<li><a href="services.html">Services</a></li>
-													<li><a href="services-detail.html">Services Details</a></li>
-												</ul>
+                                                <a href="#">Services</a>
                                             </li>                                                                                     
 											<li class="has-sub"><a href="#">Other Page</a>
 												<ul>													

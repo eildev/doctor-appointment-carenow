@@ -10,4 +10,7 @@ class ContactController extends Controller
     public function Contact(){
     return view('frontend.contact.contact');
     }
+    public function StoreContactMessage(Request $request){
+   
+    }
 }

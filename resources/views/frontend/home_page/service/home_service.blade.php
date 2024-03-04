@@ -9,46 +9,41 @@
                            </div>
                        </div>
                    </div>
-                   <div class="row sr-line">
-                       <div class="col-lg-4 col-md-12">
-                           <div class="s-single-services text-center active" >
-                               <div class="services-icon">
-                                   <img src="{{asset('frontend')}}/img/icon/sr-icon01.png" alt="img">
-                               </div>
-                               <div class="second-services-content">
-                                   <h5><a href="services-detail.html">Online Emergency</a></h5>       
-                                   <p>Mauris nunc felis, congue eu convallis in, bibendum vitae nisl. Duis vestibulum eget orci maximus pretium.</p>
-                               </div>
-                               
-                           </div>
-                       </div>
-                       <div class="col-lg-4 col-md-12">
-                            <div class="s-single-services text-center" >
-                               <div class="services-icon">
-                                  <img src="{{asset('frontend')}}/img/icon/sr-icon02.png" alt="img">
-                               </div>
-                               <div class="second-services-content">
-                                   <h5><a href="services-detail.html">Medication Service</a></h5>       
-                                   <p>Mauris nunc felis, congue eu convallis in, bibendum vitae nisl. Duis vestibulum eget orci maximus pretium.</p>
-                               </div>
-                               
-                           </div>
-                       </div>
-                       <div class="col-lg-4 col-md-12">
-                           <div class="s-single-services text-center" >
-                               <div class="services-icon">
-                                 <img src="{{asset('frontend')}}/img/icon/sr-icon03.png" alt="img">
-                               </div>
-                               <div class="second-services-content">
-                                   <h5><a href="services-detail.html">24hr Health Program</a></h5>       
-                                   <p>Mauris nunc felis, congue eu convallis in, bibendum vitae nisl. Duis vestibulum eget orci maximus pretium.</p>
-                               </div>
-                               
-                           </div>
-                       </div>
-                     
+                   <div class="row sr-line service">
                        
+                          
                    </div>
                    
                </div>
            </section>
+
+
+<script>
+      $(document).ready(function(){
+        $.ajax({
+            url:"https://dr.sobrokom.store/api/doctor/home-service/1",
+            type:"GET",
+            success:function(res){    
+                var service ="";
+               $.each(res.serviceInfo, function(key, value){ 
+             //console.log(value.name);
+             service +=`<div class="col-lg-4 col-md-12">
+                           <div class="s-single-services text-center active" >
+                               <div class="services-icon">
+                                   <img src="https://dr.sobrokom.store/uploads/service_image/${value.service_image}" alt="img">
+                               </div>
+                               <div class="second-services-content">
+                                   <h5><a>${value.name}</a></h5>       
+                                   <p>${value.description}</p>
+                               </div>
+                               
+                           </div>
+
+                         </div>`
+                 $(".service").html(service)
+               });
+            }
+        });
+        });
+
+</script>

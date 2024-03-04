@@ -13,33 +13,34 @@
                                 <h2>Get In Touch With Us</h2>
                             </div>
 						<form action="#" class="contact-form" >
+                            @csrf
 							<div class="row">
                             <div class="col-lg-6">
                                 <div class="contact-field p-relative c-name mb-20">                                    
-                                    <input type="text" placeholder="First Name">
+                                    <input type="text" name="first_name" placeholder="First Name" required>
                                 </div>                               
                             </div>
                                 <div class="col-lg-6">
                                 <div class="contact-field p-relative c-name mb-20">                                    
-                                    <input type="text" placeholder="Last Name">
+                                    <input type="text" name="last_name"  placeholder="Last Name" required>
                                 </div>                               
                             </div>
 							<div class="col-lg-12">                               
                                 <div class="contact-field p-relative c-email mb-20">                                    
-                                    <input type="text" placeholder="Write here youremail">
+                                    <input type="email" name="email"  placeholder="Write here youremail" required>
                                 </div>                                
                             </div>
 							<div class="col-lg-12">                               
                                 <div class="contact-field p-relative c-subject mb-20">                                   
-                                    <input type="text" placeholder="I would like to discuss">
+                                    <input type="text" name="subject" placeholder="I would like to discuss">
                                 </div>
                             </div>							
                             <div class="col-lg-12">
                                 <div class="contact-field p-relative c-message mb-45">                                  
-                                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Write comments"></textarea>
+                                    <textarea name="message" id="message"  cols="30" rows="10" placeholder="Write comments" required></textarea>
                                 </div>
                                 <div class="slider-btn">                                          
-                                            <a href="#" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">Send Message</a>					
+                                            <input type="submit"  class="btn ss-btn" data-animation="fadeInRight" value="Send Message" data-delay=".8s">				
                                         </div>                             
                             </div>
                             </div>
@@ -51,3 +52,4 @@
                 </div>
                
             </section>
+           

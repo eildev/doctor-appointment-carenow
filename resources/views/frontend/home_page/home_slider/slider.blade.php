@@ -20,7 +20,6 @@
         </div>
     </div>
     </div>
-
 </section>
 <script>
     $(document).ready(function() {
@@ -28,7 +27,7 @@
         url:"https://dr.sobrokom.store/api/doctor/home-slider/1",
         type:'GET',
         success:function(res){
-         //   console.log(res.sliderInfo.slider_image);
+     //    console.log(res.sliderInfo.slider_image);
             $src = "https://dr.sobrokom.store/uploads/slider_image/"
             var href = res.sliderInfo.slider_links; 
             $('.slider_image').attr('src',$src+res.sliderInfo.slider_image);      
