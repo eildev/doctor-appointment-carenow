@@ -7,8 +7,7 @@
                      <div class="col-lg-6 col-md-12 col-sm-12">
                            <div class="s-about-img  p-relative">
                                <!-- <img src="{{asset('frontend')}}/img/bg/illlustration.png" alt="img"> -->
-                               <img src="" alt="img" class="about_us_image">
-                               
+                               <img src="" alt="img" class="about_us_image" height="613px" width="944px">
                            </div>
                        </div>
                        <div class="col-lg-6 col-md-12 col-sm-12">
@@ -46,7 +45,7 @@
                        
                    </div>
                </div>
-           </section>
+</section>
 
 
            

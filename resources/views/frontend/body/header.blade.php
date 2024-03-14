@@ -47,15 +47,11 @@
                                         <ul>
                                             <li class="has-sub">
 												<a href="index.html">Home</a>
-												<ul>													
-													<li><a href="index.html">Home Page 01</a></li>
-													<li><a href="index-2.html">Home Page 02</a></li>													
-													<li><a href="index-3.html">Home Page 03</a></li>													
-												</ul>
+												
 											</li>
                                             <li><a href="{{route('about.page')}}">About Us</a></li>
                                             <li class="has-sub">
-                                                <a href="#">Services</a>
+                                                <a href="{{route('all.services')}}">Services</a>
                                             </li>                                                                                     
 											<li class="has-sub"><a href="#">Other Page</a>
 												<ul>													

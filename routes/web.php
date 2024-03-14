@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\AppointmentController;
 use App\Http\Controllers\Frontend\AboutUsController;
+use App\Http\Controllers\Frontend\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,9 @@ Route::get('/', function () {
 })->name('index');
 //All Contact Controller
 Route::controller(AboutUsController::class)->group(function () {
-     Route::get('/about-us', 'AboutUs')->name('about.page');
-     
+     Route::get('/about-us', 'AboutUs')->name('about.page'); 
+ });
+Route::controller(ServiceController::class)->group(function () {
+     Route::get('/all-service', 'AllServices')->name('all.services'); 
  });
 
