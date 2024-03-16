@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\AppointmentController;
 use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\ServiceController;
+use App\Http\Controllers\Frontend\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,10 @@ Route::controller(AboutUsController::class)->group(function () {
 Route::controller(ServiceController::class)->group(function () {
      Route::get('/all-service', 'AllServices')->name('all.services'); 
  });
+ //blog
+ Route::controller(IndexController::class)->group(function () {
+    Route::get('/blog-details', 'BlogDetails')->name('blog.details');
+    //Appointment
+    Route::get('/appointment-page', 'GetAppointment')->name('get.appointment');
 
+});

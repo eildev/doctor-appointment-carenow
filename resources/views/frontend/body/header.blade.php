@@ -38,7 +38,7 @@
                         <div class="row align-items-center">
                             <div class="col-xl-2 col-lg-2">
                                 <div class="logo">
-                                    <a href="index.html"><img src="{{asset('frontend')}}/img/logo/logo.png" alt="logo"></a>
+                                    <a href="{{url('/')}}"><img src="{{asset('frontend')}}/img/logo/logo.png" alt="logo"></a>
                                 </div>
                             </div>
                             <div class="col-xl-8 col-lg-8">                               
@@ -46,7 +46,7 @@
                                     <nav id="mobile-menu">
                                         <ul>
                                             <li class="has-sub">
-												<a href="index.html">Home</a>
+												<a href="{{url('/')}}">Home</a>
 												
 											</li>
                                             <li><a href="{{route('about.page')}}">About Us</a></li>
@@ -81,7 +81,7 @@
                                 </div>
                             </div>    
                              <div class="col-xl-2 col-lg-2 d-none d-lg-block">
-                                 <a href="contact.html" class="top-btn">Get A Quote <i class="fas fa-chevron-right"></i></a>
+                                 <a href="{{route('get.appointment')}}" class="top-btn">Get Appointment<i class="fas fa-chevron-right"></i></a>
                                  
                             </div>
                              <div class="col-12">
