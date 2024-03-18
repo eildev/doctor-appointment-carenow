@@ -70,11 +70,7 @@
                                             </li>
                                            
 											<li class="has-sub"> 
-                                                <a href="blog.html">Blog</a>
-                                                <ul>													
-													<li><a href="blog.html">Blog</a></li>
-													<li><a href="blog-details.html">Blog Details</a></li>
-												</ul>
+                                                <a href="{{route('all.blog')}}">Blog</a>
                                             </li>               
                                         </ul>
                                     </nav>

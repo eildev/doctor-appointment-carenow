@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="blog-content text-center">
                                <div class="truncate-text">
-                               <h4><a href="${value.id}">${truncatedTitle}</a></h4>    
+                               <h4><a href="/single-blog-details/${value.id}">${truncatedTitle}</a></h4>    
                                      <p>${value.desc}</p>
                                </div>                            
                                      <div class="b-meta mt-20">

@@ -13,8 +13,7 @@ use App\Http\Controllers\ApiController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-// Route::post('api',[ApiController::class,'api']);
-
+Route::get('single-blog-details/{dr_id}/{id}',[ApiController::class,'BlogDetails']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

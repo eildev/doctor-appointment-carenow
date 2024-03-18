@@ -30,6 +30,7 @@ Route::controller(ServiceController::class)->group(function () {
  });
  //blog
  Route::controller(IndexController::class)->group(function () {
+    Route::get('/all-blog', 'AllBlog')->name('all.blog');
     Route::get('/blog-details', 'BlogDetails')->name('blog.details');
     //Appointment
     Route::get('/appointment-page', 'GetAppointment')->name('get.appointment');

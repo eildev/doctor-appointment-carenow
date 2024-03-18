@@ -196,7 +196,7 @@
             <div class="brand-area" style="background-image:url({{asset('frontend')}}/img/an-bg/an-bg12.png); background-size: cover;background-repeat: no-repeat;">
                 <div class="container">
                     <div class="row brand-active">
-                        <div class="col-xl-2">
+                        <div class="col-xl-2"> x cv   
                             <div class="single-brand">
                                 <img src="{{asset('frontend')}}/img/brand/c-logo.png" alt="img">
                             </div>
