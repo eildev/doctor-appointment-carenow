@@ -1,4 +1,4 @@
-<section id="contact" class="contact-area contact-bg pb-70 p-relative fix" style="background-image:url({{asset('frontend')}}/img/an-bg/an-bg11.png); background-size: cover;background-repeat: no-repeat;">
+<section id="contact" class="contact-area contact-bg pb-70 p-relative fix" style="background-image:url({{asset('frontend')}}/img/an-bg/an-bg11.png); background-size: cover;background-repeat: no-repeat; ">
                 <div class="container">
              
 					<div class="row">

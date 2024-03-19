@@ -9,5 +9,6 @@ class ServiceController extends Controller
 {
     public function AllServices(){
         return view('frontend.services.all_services');
-    }
+    }//
+   
 }

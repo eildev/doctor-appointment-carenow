@@ -27,12 +27,16 @@ Route::controller(AboutUsController::class)->group(function () {
  });
 Route::controller(ServiceController::class)->group(function () {
      Route::get('/all-service', 'AllServices')->name('all.services'); 
+    
  });
  //blog
  Route::controller(IndexController::class)->group(function () {
     Route::get('/all-blog', 'AllBlog')->name('all.blog');
-    Route::get('/blog-details', 'BlogDetails')->name('blog.details');
+    Route::post('/blog-details', 'BlogDetails')->name('blog.details');
     //Appointment
     Route::get('/appointment-page', 'GetAppointment')->name('get.appointment');
-
+    //contact us
+    Route::get('/contact-page', 'ContactUs')->name('contact.us');
+    //services 
+    Route::get('/service/details', 'ServicesDetails')->name('services.details'); 
 });

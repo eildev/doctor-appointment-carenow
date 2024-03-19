@@ -1,5 +1,6 @@
 @extends('frontend.master')
 @section('body')
+
 <section class="breadcrumb-area d-flex align-items-center" style="background-image:url(img/testimonial/test-bg.jpg)">
                 <div class="container">
                     <div class="row">
@@ -27,54 +28,21 @@
                         <div class="col-lg-8">
                             <div class="blog-details-wrap">
 							<div class="bsingle__post-thumb mb-30">
-                                    <img src="img/blog/inner_b1.jpg" alt="">
+                            <img src="{{ 'https://dr.sobrokom.store/uploads/blog/blog_post/'.$image }}" alt="Blog Image" width="auto" height="460px">
                                 </div>
                                 <div class="meta__info">
                                     <ul>
-                                        <li><a href="#">  <i class="far fa-calendar-alt"></i>  7 March, 2019</a></li>
-                                            <li><a href="#"><i class="far fa-user"></i>by Zcube</a></li>
-                                            <li><i class="far fa-comments"></i>35 Comments</li>
+                                        <li><a href="#">  <i class="far fa-calendar-alt"></i> <span> {{ $created_at->format('F j, Y') }}</sapn></a></li>
+                                            <li><a href="#"><i class="far fa-user"></i>Admin</a></li>
+                                         
                                     </ul>
                                 </div>
                                 <div class="details__content pb-50">
-                                <h3><a href="#">A series of iOS 7 inspire
-                                                            vector icons.</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod temp or
-                                                        incididunt ut labore et dolore.</p>
+                                <h3><a href="#">{{$title}}</a></h3>
+                                <p>{!!$desc!!}</p>
                                 </div>
                                 
-                                <div class="related__post mt-45 mb-85">
-                                    <div class="post-title">
-                                        <h4>Related Post</h4>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="related-post-wrap mb-30">
-                                                <div class="post-thumb">
-                                                    <img src="img/blog/b_details03.jpg" alt="">
-                                                </div>
-                                                <div class="rp__content">
-                                                    <h3><a href="#">A series of iOS 7 inspire
-                                                            vector icons.</a></h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod temp or
-                                                        incididunt ut labore et dolore.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="related-post-wrap mb-30">
-                                                <div class="post-thumb">
-                                                    <img src="img/blog/b_details04.jpg" alt="">
-                                                </div>
-                                                <div class="rp__content">
-                                                    <h3><a href="#">Sed ut perspiciatis unde omnis.</a></h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod temp or
-                                                        incididunt ut labore et dolore.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                             
    
                             </div>
                         </div>
@@ -85,52 +53,10 @@
                                         <h4>Feeds</h4>
                                     </div>
                                     <div class="widget__post">
-                                        <ul>
-                                            <li>
-                                                <div class="widget__post-thumb">
-                                                    <img src="img/blog/aside/post_01.jpg" alt="">
-                                                </div>
-                                                <div class="widget__post-content">
-                                                    <h6><a href="#">Alonso kelina falao asiano pero</a></h6>
-                                                    <span><i class="far fa-clock"></i>1 Hours ago</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="widget__post-thumb">
-                                                    <img src="img/blog/aside/post_02.jpg" alt="">
-                                                </div>
-                                                <div class="widget__post-content">
-                                                    <h6><a href="#">It is a long established fact that a reader</a></h6>
-                                                    <span><i class="far fa-clock"></i>3 Hours ago</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="widget__post-thumb">
-                                                    <img src="img/blog/aside/post_03.jpg" alt="">
-                                                </div>
-                                                <div class="widget__post-content">
-                                                    <h6><a href="#">Many desktop publish packages and web</a></h6>
-                                                    <span><i class="far fa-clock"></i>5 Hours ago</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="widget__post-thumb">
-                                                    <img src="img/blog/aside/post_04.jpg" alt="">
-                                                </div>
-                                                <div class="widget__post-content">
-                                                    <h6><a href="#">Various versions have evolved over the years</a></h6>
-                                                    <span><i class="far fa-clock"></i>6 Hours ago</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="widget__post-thumb">
-                                                    <img src="img/blog/aside/post_05.jpg" alt="">
-                                                </div>
-                                                <div class="widget__post-content">
-                                                    <h6><a href="#">Photo booth anim 8-bit PBR 3 wolf moon.</a></h6>
-                                                    <span><i class="far fa-clock"></i>8 Hours ago</span>
-                                                </div>
-                                            </li>
+                                        <ul class="allBlogtitle">
+                                            
+                                            
+                                           
                                         </ul>
                                     </div>
                                 </div>
@@ -140,19 +66,73 @@
                     </div>
                 </div>
             </section>
+            <div>
+<form id="blogDetailsForm" method="POST" action="{{ url('/blog-details') }}">
+    @csrf <!-- CSRF protection -->
+
+    <!-- Hidden input fields to store data -->
+    <input type="hidden" name="cat_id" id="cat_id">
+    <input type="hidden" name="dr_id" id="dr_id">
+    <input type="hidden" name="user_id" id="user_id">
+    <input type="hidden" name="title" id="title">
+    <input type="hidden" name="desc" id="desc">
+    <input type="hidden" name="tags" id="tags">
+    <input type="hidden" name="image" id="image">
+    <input type="hidden" name="created_at" id="created_at">
+</form>
+</div>
             <script>
-//     $(document).ready(function(){
-//       $.ajax({
-//         url:"/blog-details/{id}",
-//         type:'GET',
-//         success:function(res){
-//           console.log(res);
-//         //   $src ="https://dr.sobrokom.store/uploads/about_us/"
-//         //  $('.about_us_image').attr('src',$src+res.aboutUs.image);
-//         //   $('.title').text(res.aboutUs.title); 
-//         //   $('.description').html(res.aboutUs.description); 
-//         }
-//       });
-//     });
-// </script>
+ $(document).ready(function(){
+      $.ajax({
+        url:"https://dr.sobrokom.store/api/doctor/home-blog/1",
+        type:'GET',
+        success:function(res){
+
+           var allBlogTitle ="";
+           const blogData = res.allBlogs.slice(0,5)
+        //    console.log(res.allBlogs.slice(0,6));
+           $.each(blogData,function(key,value){ 
+
+           //  console.log(value);
+           var date = new Date(value.created_at);
+           var formattedDate = `${('0' + date.getDate()).slice(-2)}-${('0' + (date.getMonth() + 1)).slice(-2)}-${date.getFullYear()}`;
+            var truncatedTitles = value.title.length > 30 ? value.title.substring(0, 30) + "..." : value.title;
+              allBlogTitle +=`
+                    <li>
+                <div class="widget__post-thumb">
+                    <img src="https://dr.sobrokom.store/uploads/blog/blog_post/${value.image}" height="60px" width="60px" alt="">
+                </div>
+                <div class="widget__post-content">
+                    <h6><a href="#" value="${value.id}" class="blogDetails">${truncatedTitles}</a></h6>
+                    <span><i class="far fa-clock"></i>${formattedDate}</span>
+                </div>
+               </li>`
+               $('.allBlogtitle').append(allBlogTitle);
+                });
+        }
+      });
+    });
+    $(document).ready(function() {
+        $(document).on('click', '.blogDetails', function(e) {
+            e.preventDefault();
+            var id = $(this).attr('value');
+            $.ajax({
+                url:"https://dr.sobrokom.store/api/blog/details/"+id,
+                type:'GET',
+                dataType:"json",
+                success:function(res){        
+                document.querySelector('#cat_id').value= res.blogdetais.cat_id,
+                document.querySelector('#dr_id').value= res.blogdetais.dr_id,
+                document.querySelector('#user_id').value= res.blogdetais.user_id,
+                document.querySelector('#title').value= res.blogdetais.title,
+                document.querySelector('#desc').value= res.blogdetais.desc,
+                document.querySelector('#tags').value= res.blogdetais.tags,
+                document.querySelector('#image').value= res.blogdetais.image,
+                document.querySelector('#created_at').value= res.blogdetais.created_at,
+                $("#blogDetailsForm").submit();
+                }
+            });
+        });
+    });
+</script>
 @endsection

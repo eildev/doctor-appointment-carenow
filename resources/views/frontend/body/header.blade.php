@@ -53,24 +53,12 @@
                                             <li class="has-sub">
                                                 <a href="{{route('all.services')}}">Services</a>
                                             </li>                                                                                     
-											<li class="has-sub"><a href="#">Other Page</a>
-												<ul>													
-													<li><a href="pricing.html">Pricing</a></li>
-													<li><a href="team.html">Team</a></li>
-                                                    <li><a href="shop.html">Shop</a></li>
-													<li><a href="shop-details.html">Shop Details</a></li>
-												</ul>
-											</li>
-                                            <li class="has-sub"> 
-                                                <a href="departments.html">Departments</a>
-                                                <ul>													
-													<li><a href="departments.html">Departments</a></li>
-													<li><a href="departments-detail.html">Departments Details</a></li>
-												</ul>
-                                            </li>
-                                           
+											     
 											<li class="has-sub"> 
                                                 <a href="{{route('all.blog')}}">Blog</a>
+                                            </li>               
+											<li class="has-sub"> 
+                                                <a href="{{route('contact.us')}}">Contact Us</a>
                                             </li>               
                                         </ul>
                                     </nav>

@@ -26,7 +26,22 @@
                         
                     </div>
                 </div>
-            </section>
+ </section>
+<div>
+<form id="blogDetailsForm" method="POST" action="{{ url('/blog-details') }}">
+    @csrf <!-- CSRF protection -->
+
+    <!-- Hidden input fields to store data -->
+    <input type="hidden" name="cat_id" id="cat_id">
+    <input type="hidden" name="dr_id" id="dr_id">
+    <input type="hidden" name="user_id" id="user_id">
+    <input type="hidden" name="title" id="title">
+    <input type="hidden" name="desc" id="desc">
+    <input type="hidden" name="tags" id="tags">
+    <input type="hidden" name="image" id="image">
+    <input type="hidden" name="created_at" id="created_at">
+</form>
+</div>
 <script>
     $(document).ready(function(){
       $.ajax({
@@ -37,24 +52,23 @@
             
            $.each(res.blogInfo,function(key,value){
             var date = new Date(value.created_at);
-
             // Format the date
             var formattedDate = `${('0' + date.getDate()).slice(-2)}-${('0' + (date.getMonth() + 1)).slice(-2)}-${date.getFullYear()}`;
             var truncatedTitle = value.title.length > 50 ? value.title.substring(0, 50) + "..." : value.title;
-         //   var truncatedDesc = value.desc.length > 60 ? value.desc.substring(0, 60) + "..." : value.desc;
+           var truncatedDesc = value.desc.length > 60 ? value.desc.substring(0, 60) + "..." : value.desc;
 
             blog += `
            <div class="col-lg-4 col-md-12">
                             <div class="single-post mb-30" >
                                 <div class="blog-thumb">
-                                    <a href="">
+                                    <a href="#"value="${value.id}" class="blogDetails">
                                         <img style="height:310px;width:350px" src="https://dr.sobrokom.store/uploads/blog/blog_post/${value.image}" alt="img">
                                          <img src="{{asset('frontend')}}/img/bg/b-link.png" alt="b-link" class="b-link">
                                     </a>
                                 </div>
                                 <div class="blog-content text-center">
                                <div class="truncate-text">
-                               <h4><a href="/single-blog-details/${value.id}">${truncatedTitle}</a></h4>    
+                               <h4><a href="#" value="${value.id}" class="blogDetails">${truncatedTitle}</a></h4>    
                                      <p>${value.desc}</p>
                                </div>                            
                                      <div class="b-meta mt-20">
@@ -76,5 +90,28 @@
            });
         }
       });
+    });
+ 
+    $(document).ready(function() {
+        $(document).on('click', '.blogDetails', function(e) {
+            e.preventDefault();
+            var id = $(this).attr('value');
+            $.ajax({
+                url:"https://dr.sobrokom.store/api/blog/details/"+id,
+                type:'GET',
+                dataType:"json",
+                success:function(res){        
+                document.querySelector('#cat_id').value= res.blogdetais.cat_id,
+                document.querySelector('#dr_id').value= res.blogdetais.dr_id,
+                document.querySelector('#user_id').value= res.blogdetais.user_id,
+                document.querySelector('#title').value= res.blogdetais.title,
+                document.querySelector('#desc').value= res.blogdetais.desc,
+                document.querySelector('#tags').value= res.blogdetais.tags,
+                document.querySelector('#image').value= res.blogdetais.image,
+                document.querySelector('#created_at').value= res.blogdetais.created_at,
+                $("#blogDetailsForm").submit();
+                }
+            });
+        });
     });
 </script>
