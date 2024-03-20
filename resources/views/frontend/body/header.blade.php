@@ -7,14 +7,14 @@
                         <div class="col-lg-4 col-md-8 d-none  d-md-block">
                             <div class="header-cta">
                                 <ul>                                   
-                                    <li>
-                                        <i class="icon dripicons-mail"></i>
-                                        <span>info@example.com</span>
-                                    </li>
-                                     <li>
-                                        <i class="icon dripicons-phone"></i>
-                                        <span>+8 12 3456897</span>
-                                    </li>
+                                    
+                                        <i class="icon dripicons-mail p-1"></i>
+                                        <span class="email pr-1" ></span>
+                                 
+                                    
+                                        <i class="icon dripicons-phone "></i>
+                                        <span class="phone"></span>
+                                  
                                 </ul>
                             </div>
                         </div>
@@ -76,3 +76,17 @@
                 </div>
             </div>
         </header>
+        <script>
+      $(document).ready(function(){
+        $.ajax({
+            url:"https://dr.sobrokom.store/api/doctor/contact-info/1",
+            type:"GET",
+            success:function(res){    
+                $('.phone').text(res.ContactInfo.phone); 
+                $('.email').text(res.ContactInfo.email); 
+                $('.address').text(res.ContactInfo.address); 
+            }
+        });
+        });
+     
+</script>

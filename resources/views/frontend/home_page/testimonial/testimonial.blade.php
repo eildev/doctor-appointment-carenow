@@ -1,3 +1,4 @@
+
 <section id="testimonios" class="testimonial-area testimonial-p pt-50 pb-85 fix" style="background-image: url({{asset('frontend')}}/img/an-bg/an-bg07.png);background-position: center; background-repeat: no-repeat;background-size: contain;" >
                <div class="container">
                      <div class="row justify-content-center">
@@ -13,83 +14,47 @@
                    
                   <div class="row justify-content-center">
                        
-                       <div class="col-lg-10">                           
-                           <div class="testimonial-active">
-                             
-                        
-                               <div class="single-testimonial">
-                                    <div class="testi-img">
-                                       <img src="{{asset('frontend')}}/img/testimonial/testimonial-img.png" alt="img">                                        
-                                   </div>
-                                   <div class="single-testimonial-bg">
-                                   <div class="com-icon"><img src="{{asset('frontend')}}/img/testimonial/qutation.png" alt="img"></div>
-                                       <div class="testi-author">
-                                                    <div class="ta-info">                                          
-                                           <h6>Adam McWilliams</h6>
-                                           <span>CEO & Founder</span>
-                                           
-                                       </div>
-                                   </div>
-                                   <p>Nullam metus mi, sollicitudin eu elit non, laoreet consectetur urna. Nullam quis aliquet elit. Cras augue tortor, lacinia et fermentum eget, suscipit id ligula. Donec id mollis sem, nec tincidunt neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                                       </div>
-                                  
-                               </div>
-                               <div class="single-testimonial">
-                                    <div class="testi-img">
-                                       <img src="{{asset('frontend')}}/img/testimonial/testimonial-img.png" alt="img">                                        
-                                   </div>
-                                   <div class="single-testimonial-bg">
-                                   <div class="com-icon"><img src="{{asset('frontend')}}/img/testimonial/qutation.png" alt="img"></div>
-                                       <div class="testi-author">
-                                                    <div class="ta-info">                                          
-                                           <h6>Rose Dose</h6>
-                                           <span>Sale Executive</span>
-                                           
-                                       </div>
-                                   </div>
-                                   <p>Nullam metus mi, sollicitudin eu elit non, laoreet consectetur urna. Nullam quis aliquet elit. Cras augue tortor, lacinia et fermentum eget, suscipit id ligula. Donec id mollis sem, nec tincidunt neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                                       </div>
-                                  
-                               </div>
-                                   <div class="single-testimonial">
-                                    <div class="testi-img">
-                                       <img src="{{asset('frontend')}}/img/testimonial/testimonial-img.png" alt="img">                                        
-                                   </div>
-                                   <div class="single-testimonial-bg">
-                                   <div class="com-icon"><img src="{{asset('frontend')}}/img/testimonial/qutation.png" alt="img"></div>
-                                       <div class="testi-author">
-                                                    <div class="ta-info">                                          
-                                           <h6>Margie R. Robinson</h6>
-                                           <span>Web Developer</span>
-                                           
-                                       </div>
-                                   </div>
-                                   <p>Nullam metus mi, sollicitudin eu elit non, laoreet consectetur urna. Nullam quis aliquet elit. Cras augue tortor, lacinia et fermentum eget, suscipit id ligula. Donec id mollis sem, nec tincidunt neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                                       </div>
-                                  
-                               </div>
-                                    <div class="single-testimonial">
-                                    <div class="testi-img">
-                                       <img src="{{asset('frontend')}}/img/testimonial/testimonial-img.png" alt="img">                                        
-                                   </div>
-                                   <div class="single-testimonial-bg">
-                                   <div class="com-icon"><img src="{{asset('frontend')}}/img/testimonial/qutation.png" alt="img"></div>
-                                       <div class="testi-author">
-                                                    <div class="ta-info">                                          
-                                           <h6>Jone Dose</h6>
-                                           <span>MD & Founder</span>
-                                           
-                                       </div>
-                                   </div>
-                                   <p>Nullam metus mi, sollicitudin eu elit non, laoreet consectetur urna. Nullam quis aliquet elit. Cras augue tortor, lacinia et fermentum eget, suscipit id ligula. Donec id mollis sem, nec tincidunt neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                                       </div>
-                                  
-                               </div>
-                           
-                               
+                       <div class="col-lg-10 ">                           
+                           <div class="testimonial-active  testimonial">
+      
                            </div>
                        </div>
                        
                    </div>
                </div>
            </section>
+
+           <script>
+      $(document).ready(function(){
+        $.ajax({
+            url:"https://dr.sobrokom.store/api/doctor/testimonial/1",
+            type:"GET",
+            success:function(res){    
+                var testimonial ="";
+               $.each(res.testimonial, function(key, value){ 
+           //  console.log(value.name);
+              testimonial +=`
+                         <div class="single-testimonial">
+                                    <div class="testi-img">
+                                       <img src="https://dr.sobrokom.store/uploads/testimonial/${value.image}" height="120px" width="120px"alt="img">                                        
+                                   </div>
+                                   <div class="single-testimonial-bg">
+                                   <div class="com-icon"><img src="{{asset('frontend')}}/img/testimonial/qutation.png" alt="img"></div>
+                                       <div class="testi-author">
+                                                    <div class="ta-info">                                          
+                                           <h6>${value.name}</h6>
+                                           <span>${value.name}</span>
+                                           
+                                       </div>
+                                   </div>
+                                   <p>${value.description}</p>
+                                       </div>
+                                  
+                               </div>`
+              $(".testimonial").html(testimonial)
+               });
+            }
+        });
+        });
+     
+</script>

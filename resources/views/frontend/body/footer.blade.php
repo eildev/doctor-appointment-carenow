@@ -31,7 +31,7 @@
                                 <div class="footer-link">
                                     <ul>                                        
                                         <li><a href="#"><i class="fas fa-chevron-right"></i> Partners</a></li>
-										<li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+										<li><a href="{{route('about.page')}}"><i class="fas fa-chevron-right"></i> About Us</a></li>
                                         <li><a href="#"><i class="fas fa-chevron-right"></i> Career</a></li>
                                         <li><a href="#"><i class="fas fa-chevron-right"></i> Reviews</a></li>
                                         <li><a href="#"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
@@ -47,12 +47,12 @@
                                 </div>
                                 <div class="footer-link">
                                     <ul>
-                                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
-                                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                                        <li><a href="#"><i class="fas fa-chevron-right"></i> Services</a></li>
-                                        <li><a href="#"><i class="fas fa-chevron-right"></i> Project</a></li>
-                                        <li><a href="#"><i class="fas fa-chevron-right"></i> Our Team</a></li>
-                                        <li><a href="#"><i class="fas fa-chevron-right"></i> Latest Blog</a></li>
+                                        <li><a href="{{url('/')}}"><i class="fas fa-chevron-right"></i> Home</a></li>
+                                        <li><a href="{{route('about.page')}}"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                                        <li><a href="{{route('all.services')}}"><i class="fas fa-chevron-right"></i> Services</a></li>
+                                        <li><a href="{{route('all.blog')}}"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                                        <li><a href="{{route('contact.us')}}"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                                      
                                     </ul>
                                 </div>
                             </div>
@@ -66,16 +66,16 @@
                                     <div class="f-contact">
                                     <ul>
                                     <li>
-                                        <i class="icon dripicons-phone"></i>
-                                        <span>1800-121-3637<br>+91 555 234-8765</span>
+                                        <i class="icon dripicons-phone "></i>
+                                        <span class="phone"></span>
                                     </li>
                                     <li>
                                         <i class="icon dripicons-mail"></i>
-                                         <span><a href="mailto:info@example.com">info@example.com</a><br><a href="mailto:sale@example.com">sale@example.com</a></span>
+                                         <span class="email"><a href="#" ></a></span>
                                     </li>
                                     <li>
                                       <i class="fal fa-map-marker-alt"></i>
-                                         <span>380 St Kilda Road, Melbourne<br>VIC 3004, Australia</span>
+                                         <span class="address"></span>
                                     </li>
                                 </ul>
                                     
@@ -101,3 +101,27 @@
                 </div>
             </div>
         </footer>
+        <script>
+      $(document).ready(function(){
+        $.ajax({
+            url:"https://dr.sobrokom.store/api/doctor/contact-info/1",
+            type:"GET",
+            success:function(res){    
+                $('.phone').text(res.ContactInfo.phone); 
+                $('.email').text(res.ContactInfo.email); 
+                $('.address').text(res.ContactInfo.address); 
+            }
+        });
+
+        // $.ajax({
+        //     url:"https://dr.sobrokom.store/api/doctor/social/link/1",
+        //     type:"GET",
+        //     success:function(res){    
+        //         $('.phone').text(res.ContactInfo.phone); 
+        //         $('.email').text(res.ContactInfo.email); 
+        //         $('.address').text(res.ContactInfo.address); 
+        //     }
+        // });
+        });
+     
+</script>

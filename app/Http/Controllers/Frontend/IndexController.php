@@ -31,14 +31,15 @@ class IndexController extends Controller
         return view('frontend.contact_us.contact_us');
     }//
     public function ServicesDetails(Request $request){
-     $dr_id = $request->dr_id;
-     $name = $request->name;
-     $description = $request->description;
-     $price = $request->price;
-     $service_image = $request->service_image;
-     $created_at = $request->created_at;
-     $created_at = Carbon::parse($created_at);
-        return view('frontend.services.services_details',compact('dr_id','name','description','price','service_image','created_at'));
+    //  $dr_id = $request->dr_id;
+    //  $name = $request->name;
+    //  $description = $request->description;
+    //  $price = $request->price;
+    //  $service_image = $request->service_image;
+    //  $created_at = $request->created_at;
+    //  $created_at = Carbon::parse($created_at);
+    // ,compact('dr_id','name','description','price','service_image','created_at')
+        return view('frontend.services.services_details');
     }//
    
 }

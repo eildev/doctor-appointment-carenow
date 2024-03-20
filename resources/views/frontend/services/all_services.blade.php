@@ -36,19 +36,17 @@
                    </div>
                    
                </div>
+               <!-- <form id="serviceDetailsForm" method="POST" action="{{ url('/service/details') }}">
+                 @csrf 
+                <input type="hidden" name="dr_id" id="dr_id">
+                <input type="hidden" name="name" id="name">
+                <input type="hidden" name="description" id="description">
+                <input type="hidden" name="price" id="price">
+                <input type="hidden" name="service_image" id="service_image">
+                <input type="hidden" name="created_at" id="created_at">
+            </form> -->
            </section>
-           <form id="serviceDetailsForm" method="POST" action="{{ url('/service/details') }}">
-            @csrf <!-- CSRF protection -->
 
-            <!-- Hidden input fields to store data -->
-            <input type="hidden" name="dr_id" id="dr_id">
-            <input type="hidden" name="name" id="name">
-            <input type="hidden" name="description" id="description">
-            <input type="hidden" name="price" id="price">
-            <input type="hidden" name="service_image" id="service_image">
-            <input type="hidden" name="created_at" id="created_at">
-        </form>
-</div>
            <script>
       $(document).ready(function(){
         $.ajax({
@@ -91,13 +89,13 @@
                 dataType:"json",
                 success:function(res){        
                 console.log(res.serviceDetails.title);
-                document.querySelector('#dr_id').value= res.serviceDetails.dr_id,
-                document.querySelector('#name').value= res.serviceDetails.user_id,
-                document.querySelector('#description').value= res.serviceDetails.title,
-                document.querySelector('#price').value= res.serviceDetails.desc,
-                document.querySelector('#service_image').value= res.serviceDetails.tags,
-                document.querySelector('#created_at').value= res.serviceDetails.image,
-                $("#serviceDetailsForm").submit();
+                // document.querySelector('#dr_id').value= res.serviceDetails.dr_id,
+                // document.querySelector('#name').value= res.serviceDetails.user_id,
+                // document.querySelector('#description').value= res.serviceDetails.title,
+                // document.querySelector('#price').value= res.serviceDetails.desc,
+                // document.querySelector('#service_image').value= res.serviceDetails.tags,
+                // document.querySelector('#created_at').value= res.serviceDetails.image,
+                // $("#serviceDetailsForm").submit();
                 }
             });
         });
