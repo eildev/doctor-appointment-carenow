@@ -8,7 +8,7 @@
                         <h2 data-animation="fadeInUp" data-delay=".4s" class="short_caption"></span></h2>
                         <p data-animation="fadeInUp" class="long_caption" data-delay=".6s"></p>
                         <div class="slider-btn mt-25">                                          
-                            <a href="" class="btn ss-btn slider_links" data-animation="fadeInRight" data-delay=".8s">Learn More <i class="fas fa-chevron-right"></i></a>					
+                            <a href="{{route('about.page')}}" class="btn ss-btn slider_links" data-animation="fadeInRight" data-delay=".8s">Learn More <i class="fas fa-chevron-right"></i></a>					
                            
                             </div>
                     </div>
@@ -33,7 +33,7 @@
             $('.slider_image').attr('src',$src+res.sliderInfo.slider_image);      
             $('.short_caption').text(res.sliderInfo.short_caption);          
             $('.long_caption').text(res.sliderInfo.long_caption);          
-            $('.slider_links').attr('href',href);          
+        //    $('.slider_links').attr('href',href);          
         }
        });
     })

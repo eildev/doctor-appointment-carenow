@@ -45,7 +45,7 @@
 							<div class="col-lg-6">                               
                                 <div class="contact-field p-relative c-email mb-20  focus-date">                                    
                                     <input type="date" name="date"  placeholder="Date of Birth" onfocus="(this.type='date')" required>
-                                </div>                                
+                                </div>
                             </div>
 							<div class="col-lg-6">                               
                                 <div class="contact-field p-relative c-email mb-20  focus-date">                                    

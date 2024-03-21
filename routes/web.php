@@ -18,9 +18,7 @@ use App\Http\Controllers\Frontend\IndexController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-})->name('index');
+
 //All Contact Controller
 Route::controller(AboutUsController::class)->group(function () {
      Route::get('/about-us', 'AboutUs')->name('about.page'); 
@@ -31,6 +29,7 @@ Route::controller(ServiceController::class)->group(function () {
  });
  //blog
  Route::controller(IndexController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
     Route::get('/all-blog', 'AllBlog')->name('all.blog');
     Route::post('/blog-details', 'BlogDetails')->name('blog.details');
     //Appointment

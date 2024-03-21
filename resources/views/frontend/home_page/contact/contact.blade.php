@@ -15,24 +15,20 @@
 						<form action="#" class="contact-form" >
                             @csrf
 							<div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="contact-field p-relative c-name mb-20">                                    
-                                    <input type="text" name="first_name" placeholder="First Name" required>
+                                    <input type="text" name="name" placeholder="Write here your Name" required>
                                 </div>                               
                             </div>
-                                <div class="col-lg-6">
-                                <div class="contact-field p-relative c-name mb-20">                                    
-                                    <input type="text" name="last_name"  placeholder="Last Name" required>
-                                </div>                               
-                            </div>
+                               
 							<div class="col-lg-12">                               
                                 <div class="contact-field p-relative c-email mb-20">                                    
-                                    <input type="email" name="email"  placeholder="Write here youremail" required>
+                                    <input type="email" name="email"  placeholder="Write here your email" required>
                                 </div>                                
                             </div>
 							<div class="col-lg-12">                               
                                 <div class="contact-field p-relative c-subject mb-20">                                   
-                                    <input type="text" name="subject" placeholder="I would like to discuss">
+                                    <input type="text" name="phone" placeholder="Enter your Number">
                                 </div>
                             </div>							
                             <div class="col-lg-12">

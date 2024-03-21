@@ -14,47 +14,32 @@
                    
                   <div class="row justify-content-center">
                        
-                       <div class="col-lg-10 ">                           
-                           <div class="testimonial-active  testimonial">
-      
-                           </div>
-                       </div>
+                  <div class="col-lg-10">                           
+                            <div class="testimonial-active">
+                                
+                                @foreach($testimonials as $testimonial)
+                                <div class="single-testimonial">
+                                     <div class="testi-img">
+                                        <img src="img/testimonial/testimonial-img.png" alt="img">                                        
+                                    </div>
+                                    <div class="single-testimonial-bg">
+								    <div class="com-icon"><img src="img/testimonial/qutation.png" alt="img"></div>
+                                        <div class="testi-author">
+                                                     <div class="ta-info">                                          
+                                            <h6>{{$testimonial[0]['name']}}</h6>
+                                            <span>{{$testimonial[0]['other_name']}}</span>
+                                            
+                                        </div>
+                                    </div>
+                                    <p>{{ $testimonial[0]['description'] }}</p>
+                                        </div>
+                                   
+                                </div>
+                                @endforeach
+                                
+                            </div>
+                        </div>
                        
                    </div>
                </div>
            </section>
-
-           <script>
-      $(document).ready(function(){
-        $.ajax({
-            url:"https://dr.sobrokom.store/api/doctor/testimonial/1",
-            type:"GET",
-            success:function(res){    
-                var testimonial ="";
-               $.each(res.testimonial, function(key, value){ 
-           //  console.log(value.name);
-              testimonial +=`
-                         <div class="single-testimonial">
-                                    <div class="testi-img">
-                                       <img src="https://dr.sobrokom.store/uploads/testimonial/${value.image}" height="120px" width="120px"alt="img">                                        
-                                   </div>
-                                   <div class="single-testimonial-bg">
-                                   <div class="com-icon"><img src="{{asset('frontend')}}/img/testimonial/qutation.png" alt="img"></div>
-                                       <div class="testi-author">
-                                                    <div class="ta-info">                                          
-                                           <h6>${value.name}</h6>
-                                           <span>${value.name}</span>
-                                           
-                                       </div>
-                                   </div>
-                                   <p>${value.description}</p>
-                                       </div>
-                                  
-                               </div>`
-              $(".testimonial").html(testimonial)
-               });
-            }
-        });
-        });
-     
-</script>

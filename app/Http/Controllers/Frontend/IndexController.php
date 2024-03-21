@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use GuzzleHttp\Client;
 class IndexController extends Controller
 {
     public function BlogDetails(Request $request){
@@ -26,6 +27,34 @@ class IndexController extends Controller
     }
     public function AllBlog(){
         return view('frontend.blog.all_blog');
+    }//
+    public function index(){
+       // Initialize Guzzle client
+       $client = new Client();
+
+       try {
+           // Send GET request to API endpoint
+           $response = $client->request('GET', 'https://dr.sobrokom.store/api/doctor/testimonial/1');
+
+           // Get JSON response body
+           $body = $response->getBody();
+
+           // Decode JSON response
+           $data = json_decode($body, true);
+
+           // Check if decoding was successful
+           if ($data === null) {
+               return response()->json(['error' => 'Failed to decode JSON response'], 500);
+           }
+
+           // Return the view with testimonial data
+           return view('frontend.index', ['testimonials' => $data]);
+       } catch (\Exception $e) {
+           // Handle exception
+           return response()->json(['error' => 'Failed to fetch data from the API'], 500);
+       }
+            
+        
     }//
     public function ContactUs(){
         return view('frontend.contact_us.contact_us');
