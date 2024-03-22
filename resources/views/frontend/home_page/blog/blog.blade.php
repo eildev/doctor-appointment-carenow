@@ -8,7 +8,7 @@
 }
 .blog-thumb{
     height:auto !important;
-    width:auto;  
+    width:auto;
 }
 </style>
 <section id="blog" class="blog-area  p-relative pt-100 pb-90 fix" style="background-image:url({{asset('frontend')}}/img/an-bg/an-bg10.png); background-size: contain;background-repeat: no-repeat;background-position: center center;">
@@ -16,14 +16,14 @@
                     <div class="row justify-content-center">
                         <div class="col-xl-8 col-lg-10">
                             <div class="section-title text-center mb-80" >
-                              <span> OUR LATEST BOLG </span> 
+                              <span> OUR LATEST BOLG </span>
                                 <h2>Stay Updated To Our Blog & News</h2>
                                 <p >Fusce pharetra odio in urna laoreet laoreet. Aliquam erat volutpat. Phasellus nec ligula arcu. Aliquam eu urna pulvinar, iaculis ipsum in, porta massa.</p>
                             </div>
                         </div>
                     </div>
                     <div class="row blog">
-                        
+
                     </div>
                 </div>
  </section>
@@ -49,7 +49,7 @@
         type:'GET',
         success:function(res){
             var blog ="";
-            
+
            $.each(res.blogInfo,function(key,value){
             var date = new Date(value.created_at);
             // Format the date
@@ -62,15 +62,15 @@
                             <div class="single-post mb-30" >
                                 <div class="blog-thumb">
                                     <a href="#"value="${value.id}" class="blogDetails">
-                                        <img style="height:310px;width:350px" src="https://dr.sobrokom.store/uploads/blog/blog_post/${value.image}" alt="img">
+                                        <img style="height:310px;width:auto" src="https://dr.sobrokom.store/uploads/blog/blog_post/${value.image}" alt="img" >
                                          <img src="{{asset('frontend')}}/img/bg/b-link.png" alt="b-link" class="b-link">
                                     </a>
                                 </div>
                                 <div class="blog-content text-center">
                                <div class="truncate-text">
-                               <h4><a href="#" value="${value.id}" class="blogDetails">${truncatedTitle}</a></h4>    
+                               <h4><a href="#" value="${value.id}" class="blogDetails">${truncatedTitle}</a></h4>
                                      <p>${value.desc}</p>
-                               </div>                            
+                               </div>
                                      <div class="b-meta mt-20">
                                        <div class="row">
                                              <div class="col-lg-6 col-md-6">
@@ -81,9 +81,9 @@
                                              </div>
                                          </div>
                                     </div>
-                                    
+
                                 </div>
-                            
+
                             </div>
                         </div>`
                 $('.blog').html(blog);
@@ -91,7 +91,7 @@
         }
       });
     });
- 
+
     $(document).ready(function() {
         $(document).on('click', '.blogDetails', function(e) {
             e.preventDefault();
@@ -100,7 +100,7 @@
                 url:"https://dr.sobrokom.store/api/blog/details/"+id,
                 type:'GET',
                 dataType:"json",
-                success:function(res){        
+                success:function(res){
                 document.querySelector('#cat_id').value= res.blogdetais.cat_id,
                 document.querySelector('#dr_id').value= res.blogdetais.dr_id,
                 document.querySelector('#user_id').value= res.blogdetais.user_id,

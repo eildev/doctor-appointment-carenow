@@ -21,11 +21,11 @@ use App\Http\Controllers\Frontend\IndexController;
 
 //All Contact Controller
 Route::controller(AboutUsController::class)->group(function () {
-     Route::get('/about-us', 'AboutUs')->name('about.page'); 
+     Route::get('/about-us', 'AboutUs')->name('about.page');
  });
 Route::controller(ServiceController::class)->group(function () {
-     Route::get('/all-service', 'AllServices')->name('all.services'); 
-    
+     Route::get('/all-service', 'AllServices')->name('all.services');
+
  });
  //blog
  Route::controller(IndexController::class)->group(function () {
@@ -36,6 +36,6 @@ Route::controller(ServiceController::class)->group(function () {
     Route::get('/appointment-page', 'GetAppointment')->name('get.appointment');
     //contact us
     Route::get('/contact-page', 'ContactUs')->name('contact.us');
-    //services 
-    Route::get('/service/details', 'ServicesDetails')->name('services.details'); 
+    //services
+    Route::post('/service/details', 'ServicesDetails')->name('services.details');
 });

@@ -11,6 +11,7 @@
         <!-- Place favicon.ico in the root Internist, General Practitonery -->
 
 		<!-- CSS here -->
+        <script src="{{asset('frontend')}}/js/vendor/jquery-1.12.4.min.js"></script>
         <link rel="stylesheet" href="{{asset('frontend')}}/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{asset('frontend')}}/css/animate.min.css">
         <link rel="stylesheet" href="{{asset('frontend')}}/css/magnific-popup.css">
@@ -21,8 +22,10 @@
         <link rel="stylesheet" href="{{asset('frontend')}}/css/meanmenu.css">
         <link rel="stylesheet" href="{{asset('frontend')}}/css/style.css">
         <link rel="stylesheet" href="{{asset('frontend')}}/css/responsive.css">
-        
-        <script src="{{asset('frontend')}}/js/vendor/jquery-1.12.4.min.js"></script>
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+
     </head>
     <body>
         <!-- header -->
@@ -32,11 +35,11 @@
         <main>
 
            @yield('body')
-           
+
         </main>
         <!-- main-area-end -->
         <!-- footer -->
-       
+
         <!-- footer-end -->
         @include('frontend.body.footer')
 
@@ -61,5 +64,25 @@
         <script src="{{asset('frontend')}}/js/jquery.magnific-popup.min.js"></script>
         <script src="{{asset('frontend')}}/js/element-in-view.js"></script>
         <script src="{{asset('frontend')}}/js/main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script>
+            @if(Session::has('message'))
+            toastr.options =
+            {
+              "closeButton" : true,
+              "progressBar" : true
+            }
+                  toastr.success("{{ session('message') }}");
+            @endif
+
+            @if(Session::has('error'))
+            toastr.options =
+            {
+              "closeButton" : true,
+              "progressBar" : true
+            }
+            @endif
+
+          </script>
     </body>
 </html>
