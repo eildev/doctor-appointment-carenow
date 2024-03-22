@@ -40,8 +40,9 @@
 
         let email = document.querySelector('#subscriber_mail').value;
         $.ajax({
-            url: 'https://dr.sobrokom.store/api/subscriber/store',
+            url: "https://dr.sobrokom.store/api/subscriber/store",
             type: 'POST',
+            data_type: 'json',
             data: {
                 'email': email,
             },
@@ -52,7 +53,7 @@
                 } else {
                     toastr.warning(success_response.error.email);
                 }
-                // console.log(majid.message);
+                
 
             }
         });

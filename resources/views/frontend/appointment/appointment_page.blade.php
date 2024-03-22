@@ -75,7 +75,7 @@
                                 <div class="contact-field p-relative c-subject mb-20">                                   
                                     <input type="text" name="subjenotect" placeholder="Note to the doctor (optional)">
                                 </div>
-                            </div>							 -->
+                            </div>	 -->
                             <div class="col-lg-12">
                                 <div class="contact-field p-relative c-message mb-45">                                  
                                     <textarea name="message" id="message"  cols="30" rows="10"  placeholder="Note to the doctor (optional)" required></textarea>
