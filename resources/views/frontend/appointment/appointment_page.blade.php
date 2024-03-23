@@ -64,11 +64,11 @@
                                         </div>
                                         <div class="list-gender">
                                            <div class="option-gender p-1">
-                                          <span class="pr-2">Gender :</span>
-                                                <input type="radio" name="gender" id="male" value="1" >
+                                          <span class="pr-2">Gender : </span>
+                                                <input type="radio" name="gender" id="gender" value="make" >
                                                 <label class="text-color-title-sidebar pr-2" for="male" >Male</label>
 
-                                                <input type="radio" name="gender" id="female" value="2">
+                                                <input type="radio" name="gender" id="gender" value="female">
                                                 <label class="text-color-title-sidebar pr-2" for="female" >Female</label>
                                                 </div>
                                         </div>
@@ -114,8 +114,7 @@
                    let mobile = document.querySelector('#mobile').value;
                    let email = document.querySelector('#email').value;
                    let appointment_date = document.querySelector('#appointment_date').value;
-                   let male = document.querySelector('#male').value;
-                   let female = document.querySelector('#female').value;
+                   let gender = document.querySelector('#gender').value;
                    let note = document.querySelector('#note').value;
                    $.ajax({
                        url: "https://dr.sobrokom.store/api/patient/book/appointment",
@@ -139,8 +138,7 @@
                                 document.querySelector('#mobile').value="";
                                 document.querySelector('#email').value="";
                                 document.querySelector('#appointment_date').value="";
-                                document.querySelector('#male').value="";
-                                document.querySelector('#female').value="";
+                                document.querySelector('#gender').value="";
                                 document.querySelector('#note').value="";
                            } else {
                                toastr.warning(success_response.error.email);

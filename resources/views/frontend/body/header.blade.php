@@ -21,9 +21,9 @@
                          <div class="col-lg-5 col-md-3 d-none d-lg-block">
                              <div class="header-social text-right">
                             <span>
-                                <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-                                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>                               
+                                <a href="#" id="facebook" title="Facebook"><i class="fab fa-facebook"></i></a>
+                                <a href="#" id="twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" id="linkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>                               
                                </span>                    
                                <!--  /social media icon redux -->                               
                         </div>
@@ -87,6 +87,20 @@
                 $('.address').text(res.ContactInfo.address); 
             }
         });
-        });
-     
+       
+       $.ajax({
+        url:"https://dr.sobrokom.store/api/doctor/sociallink/1",
+        type:'GET',
+        success:function(res){
+   //console.log(res)
+            var facebook = res.socialIcon.facebook;
+            var twitter = res.socialIcon.twitter;
+            var linkedIn = res.socialIcon.linkdin;
+            $('#facebook').attr('href',facebook);          
+            $('#twitter').attr('href',twitter);          
+            $('#linkedIn').attr('href',linkedIn);          
+        }
+       });
+    })
+
 </script>

@@ -10,14 +10,13 @@
                                     <a href="#"><img src="{{asset('frontend')}}/img/logo/logo.png" alt="logo"></a>
                                 </div>
                                 <div class="footer-text mb-20">
-                                    <p>Sed ut perspiciatis unde om is nerror sit voluptatem accustium dolorem tium totam rem aperam eaque ipsa quae ab illose
-                                    inntore veritatis</p>
+                                    <p class="description"></p>
                                 </div>
                                 <div class="footer-social">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                    <a href="" id="facebook1"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" id="twitter1"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" id="instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" id="linkeIn"><i class="fab fa-linkedin-in"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -113,15 +112,23 @@
             }
         });
 
-        // $.ajax({
-        //     url:"https://dr.sobrokom.store/api/doctor/social/link/1",
-        //     type:"GET",
-        //     success:function(res){    
-        //         $('.phone').text(res.ContactInfo.phone); 
-        //         $('.email').text(res.ContactInfo.email); 
-        //         $('.address').text(res.ContactInfo.address); 
-        //     }
-        // });
+        $.ajax({
+        url:"https://dr.sobrokom.store/api/doctor/sociallink/1",
+        type:'GET',
+        success:function(res){
+   //console.log(res)
+            var facebook = res.socialIcon.facebook;
+            var twitter = res.socialIcon.twitter;
+            var linkedIns = res.socialIcon.linkdin;
+            var instagram = res.socialIcon.instragram;
+           
+            $('#facebook1').attr('href',facebook);          
+            $('#twitter1').attr('href',twitter);          
+            $('#instagram').attr('href',instagram);          
+            $('#linkeIn').attr('href',linkedIns);   
+            $('.description').text(res.socialIcon.description);        
+        }
+       });
         });
      
 </script>
