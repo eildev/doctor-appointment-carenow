@@ -14,7 +14,7 @@
                             @csrf
                               <div class="form-group">
                                  <input class="form-control" name="email" id="subscriber_mail" type="email" placeholder="Email Address..." value="" required>
-                                 <input type="hidden" name="dr_id" id="dr_id" value="1">
+                                 <input type="hidden" name="dr_id" id="newsdr_id" value="1">
                                  <button type="submit" class="btn btn-custom subscribe" id="send2">Subscribe <i class="fas fa-chevron-right"></i></button>
                               </div>
                               <!-- /Form-email -->
@@ -39,7 +39,7 @@
             }
         });
         let email = document.querySelector('#subscriber_mail').value;
-        let dr_id = document.querySelector('#dr_id').value;
+        let dr_id = document.querySelector('#newsdr_id').value;
         $.ajax({
             url: "https://dr.sobrokom.store/api/subscriber/store",
             type: 'POST',

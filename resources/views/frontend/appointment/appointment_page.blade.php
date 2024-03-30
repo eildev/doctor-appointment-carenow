@@ -65,7 +65,7 @@
                                         <div class="list-gender">
                                            <div class="option-gender p-1">
                                           <span class="pr-2">Gender : </span>
-                                                <input type="radio" name="gender" id="gender" value="make" >
+                                                <input type="radio" name="gender" id="gender" value="male" >
                                                 <label class="text-color-title-sidebar pr-2" for="male" >Male</label>
 
                                                 <input type="radio" name="gender" id="gender" value="female">
@@ -82,7 +82,7 @@
                             </div>	 -->
                             <div class="col-lg-12">
                                 <div class="contact-field p-relative c-message mb-45">
-                                    <textarea name="note" id="note"  cols="30" rows="10"  placeholder="Note to the doctor (optional)" required></textarea>
+                                    <textarea name="note" id="mynote"  cols="30" rows="10"  placeholder="Note to the doctor (optional)"></textarea>
                                 </div>
                                 <div class="slider-btn">
                                             <input type="submit" class="btn ss-btn appointment" data-animation="fadeInRight" value="Book Now" data-delay=".8s">
@@ -115,7 +115,7 @@
                    let email = document.querySelector('#email').value;
                    let appointment_date = document.querySelector('#appointment_date').value;
                    let gender = document.querySelector('#gender').value;
-                   let note = document.querySelector('#note').value;
+                   let note = document.querySelector('#mynote').value;
                    $.ajax({
                        url: "https://dr.sobrokom.store/api/patient/book/appointment",
                        type: 'POST',
@@ -126,8 +126,7 @@
                            'dr_id': dr_id,
                            'mobile': mobile,
                            'appointment_date': appointment_date,
-                           'male': male,
-                           'female': female,
+                           'gender': gender,
                            'note': note,
                        },
                        success: function(success_response) {
@@ -139,7 +138,7 @@
                                 document.querySelector('#email').value="";
                                 document.querySelector('#appointment_date').value="";
                                 document.querySelector('#gender').value="";
-                                document.querySelector('#note').value="";
+                                document.querySelector('#mynote').value="";
                            } else {
                                toastr.warning(success_response.error.email);
                            }

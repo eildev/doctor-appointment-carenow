@@ -48,7 +48,9 @@ class IndexController extends Controller
            }
 
            // Return the view with testimonial data
-           return view('frontend.index', ['testimonials' => $data]);
+           $datas = $data["testimonial"];
+           return view('frontend.index', compact('datas'));
+
        } catch (\Exception $e) {
            // Handle exception
            return response()->json(['error' => 'Failed to fetch data from the API'], 500);

@@ -82,6 +82,93 @@
               "progressBar" : true
             }
             @endif
+            $(document).ready(function(){
+        const btn = document.querySelector('.messagebtn');
+        btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        let msgname = document.querySelector('#msgname').value;
+        let msgemail = document.querySelector('#msgemail').value;
+        let msgphone = document.querySelector('#msgphone').value;
+        let msgmessage = document.querySelector('#msgmessage').value;
+        let dr_id = document.querySelector('#msgdr_id').value;
+        $.ajax({
+            url: "https://dr.sobrokom.store/api/patien/message/store",
+            type: 'POST',
+            data_type: 'json',
+            data: {
+                'name': msgname,
+                'email': msgemail,
+                'phone': msgphone,
+                'message': msgmessage,
+                'dr_id': dr_id,
+            },
+            success: function(success_response) {
+                if (success_response.status == 200) {
+                    toastr.success(success_response.message);
+                    document.querySelector('#msgname').value = '';
+                    document.querySelector('#msgphone').value = '';
+                    document.querySelector('#msgemail').value = '';
+                    document.querySelector('#msgmessage').value = '';
+                    document.querySelector('#dr_id').value = '';
+                } else {
+                    toastr.warning(success_response.error.email);
+                }
+            }
+        });
+    });
+    });
+            $(document).ready(function(){
+        $.ajax({
+            url:"https://dr.sobrokom.store/api/doctor/home-service/1",
+            type:"GET",
+            success:function(res){
+                var service ="";
+               $.each(res.serviceInfo, function(key, value){
+             //console.log(value.name);
+             service +=`<div class="col-lg-4 col-md-12">
+                           <div class="s-single-services text-center active" >
+                               <div class="services-icon">
+                                   <img src="https://dr.sobrokom.store/uploads/service_image/${value.service_image}" alt="img">
+                               </div>
+                               <div class="second-services-content">
+                                   <h5><a href="#" value="${value.id}" class="serviceDetail">${value.name}</a></h5>
+                                   <p>${value.description}</p>
+                               </div>
+
+                           </div>
+
+                         </div>`
+                 $(".service").html(service)
+               });
+            }
+        });
+        });
+        $(document).ready(function(){
+        $(document).on('click', '.serviceDetail', function(e) {
+            e.preventDefault();
+            var id = $(this).attr('value');
+            $.ajax({
+                url:"https://dr.sobrokom.store/api/service/details/"+id,
+                type:'GET',
+                dataType:"json",
+                success:function(res){
+                //console.log(res.singleserviceDetails.name);
+                document.querySelector('#dr_id').value= res.singleserviceDetails.dr_id,
+                document.querySelector('#name').value= res.singleserviceDetails.name,
+                document.querySelector('#description').value= res.singleserviceDetails.description,
+                document.querySelector('#price').value= res.singleserviceDetails.price,
+                document.querySelector('#service_image').value= res.singleserviceDetails.service_image,
+                document.querySelector('#created_at').value= res.singleserviceDetails.created_at,
+                $("#serviceDetailsForm").submit();
+                }
+            });
+        });
+    });
 
           </script>
     </body>
