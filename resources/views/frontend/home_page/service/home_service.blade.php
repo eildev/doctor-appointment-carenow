@@ -10,8 +10,6 @@
                        </div>
                    </div>
                    <div class="row sr-line service">
-
-
                    </div>
 
                </div>

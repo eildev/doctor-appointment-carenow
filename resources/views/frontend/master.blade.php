@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title> Mecare – Hospital and Health HTML Template </title>
+        <title> Mecare - Hospital and Health</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" type="image/x-icon" href="{{asset('frontend')}}/img/favicon.ico">
@@ -130,6 +130,14 @@
                 var service ="";
                $.each(res.serviceInfo, function(key, value){
              //console.log(value.name);
+             function limitDescription(description, maxLength) {
+             if (description.length > maxLength) {
+                    return description.substring(0, maxLength) + "...";
+                } else {
+                    return description;
+                }
+            }
+
              service +=`<div class="col-lg-4 col-md-12">
                            <div class="s-single-services text-center active" >
                                <div class="services-icon">
@@ -137,7 +145,7 @@
                                </div>
                                <div class="second-services-content">
                                    <h5><a href="#" value="${value.id}" class="serviceDetail">${value.name}</a></h5>
-                                   <p>${value.description}</p>
+                                   <p>${limitDescription(value.description, 50)}</p>
                                </div>
 
                            </div>
@@ -169,6 +177,31 @@
             });
         });
     });
+    //Gallery
+     $(document).ready(function(){
+         $.ajax({
+           url:"https://dr.sobrokom.store/api/doctor/gallery/1",
+           type:'GET',
+           success:function(res){
+               var gallery ="";
+
+              $.each(res.gallery,function(key,value){
+                 gallery += `
+               <div class="col-lg-3 col-md-12">
+                 <div class="single-post mb-20" >
+                     <div class="blog-thumb">
+                         <a href="#">
+                             <img style="height:250px;width:auto" src="https://dr.sobrokom.store/uploads/gallery/${value.gallery_image}" alt="img" >
+
+                         </a>
+                     </div>
+                 </div>
+             </div>`
+                   $('.gallery').html(gallery);
+            });
+          }
+         });
+       });
 
           </script>
     </body>
