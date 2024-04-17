@@ -5,7 +5,7 @@
                            <div class="section-title text-center pl-40 pr-40 mb-80" >
                                <span> our services</span>
                                <h2>Our Special Services For You</h2>
-                               <p class="mt-10">Fusce pharetra odio in urna laoreet laoreet. Aliquam erat volutpat. Phasellus nec ligula arcu. Aliquam eu urna pulvinar, iaculis ipsum in, porta massa.</p>
+                               <p class="mt-10">Personalized health support for your well-being journey. From prevention to treatment, we're here for you every step of the way.</p>
                            </div>
                        </div>
                    </div>

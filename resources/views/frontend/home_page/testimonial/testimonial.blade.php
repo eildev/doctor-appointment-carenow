@@ -7,7 +7,7 @@
                     <div class="section-title center-align mb-60 text-center">
                                <span>TESTIMONIAL</span>
                                <h2>What Our Client’s Say’s</h2>
-                              <p>Fusce pharetra odio in urna laoreet laoreet. Aliquam erat volutpat. Phasellus nec ligula arcu. Aliquam eu urna pulvinar, iaculis ipsum in, porta massa.</p>
+                              <p>Explore the Compelling Testimonials and Heartfelt Stories Shared by Our Esteemed Clients, Illuminating Their Journeys of Healing and Success with Our Dedicated Services</p>
                            </div>
                            </div>
                            </div>

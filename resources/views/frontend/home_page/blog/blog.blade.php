@@ -18,7 +18,7 @@
                             <div class="section-title text-center mb-80" >
                               <span> OUR LATEST BOLG </span>
                                 <h2>Stay Updated To Our Blog & News</h2>
-                                <p >Fusce pharetra odio in urna laoreet laoreet. Aliquam erat volutpat. Phasellus nec ligula arcu. Aliquam eu urna pulvinar, iaculis ipsum in, porta massa.</p>
+                                <p >Explore the Latest Insights, Expert Tips, Health News, and Personal Stories on Our Comprehensive Medical Blog & News Section, Your Trusted Source for Wellness Knowledge and Suppor</p>
                             </div>
                         </div>
                     </div>
