@@ -138,7 +138,12 @@
                $('.allBlogtitle').append(allBlogTitle);
                 });
 
-                $(document).ready(function() {
+            ///
+
+        }
+      });
+    });
+    $(document).ready(function() {
         $(document).on('click', '.blogDetails', function(e) {
             e.preventDefault();
             var id = $(this).attr('value');
@@ -159,10 +164,6 @@
                 }
             });
         });
-    });
-
-        }
-      });
     });
 </script>
 @endsection

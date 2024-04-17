@@ -17,7 +17,7 @@
 							<div class="row">
                             <div class="col-lg-12">
                                 <div class="contact-field p-relative c-name mb-20">
-                                    <input type="text" name="name" id="msgname" placeholder="Write here your Name" required>
+                                    <input type="text" name="name" id="msgname" placeholder="Write here your Name" required =  "">
                                 </div>
                             </div>
 
